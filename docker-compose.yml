@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  portal:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    container_name: micro
+    image: dkrasimir/micro
+    ports:
+      - "50080:8080"
+      - "50048:4848"
