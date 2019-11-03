@@ -53,7 +53,7 @@ pipeline {
         dir ('./charts/preview') {
          container('maven') {
            sh "make preview"
-           sh "jx preview --name=${ORG}-${APP_NAME}-${BRANCH_NAME} --verbose=true --log-level='debug' --app $APP_NAME --dir ../.."
+           sh "jx preview --name=${ORG}-${APP_NAME}-${BRANCH_NAME} --verbose=true --app $APP_NAME --dir ../.."
          }
         }
         }
