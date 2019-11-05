@@ -22,14 +22,6 @@ pipeline {
           }
         }
       }
-      stage('CI: Analyse Code') {
-      when { anyOf { branch 'master'; branch 'PR-*' } }
-        steps {
-            container('maven') {
-                //sh "mvn sonar:sonar -Dsonar.host.url=http://sonar.bmw.cloud-poc-station.com"
-            }
-        }
-      }
       stage('CI: Push Snapshot') {
             when { anyOf { branch 'master'; branch 'PR-*' } }
                environment {
