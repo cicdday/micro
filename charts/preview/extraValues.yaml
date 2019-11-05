@@ -1,22 +1,12 @@
-
 expose:
   Annotations:
     helm.sh/hook: post-install,post-upgrade
     helm.sh/hook-delete-policy: hook-succeeded
   config:
+    domain: cloud-poc-station.com
     exposer: Ingress
-    http: true
-    tlsacme: false
-
-cleanup:
-  Args:
-    - --cleanup
-  Annotations:
-    helm.sh/hook: pre-delete
-    helm.sh/hook-delete-policy: hook-succeeded
-
+    http: "true"
 preview:
   image:
     repository: 016973021151.dkr.ecr.eu-west-1.amazonaws.com/cicdday/micro
     tag: 0.0.0-SNAPSHOT-master-11
-    pullPolicy: IfNotPresent
