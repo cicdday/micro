@@ -1,0 +1,12 @@
+dependencies:
+- name: exposecontroller
+  repository: http://chartmuseum.jenkins-x.io
+  version: 2.3.56
+- name: exposecontroller
+  repository: http://chartmuseum.jenkins-x.io
+  version: 2.3.56
+- name: micro
+  repository: file://../micro
+  version: 0.0.0-SNAPSHOT-master-13
+digest: sha256:a23dde3632c0b828ed84c078b29d8eb2a66c221916f5b6a3452a5c413970bc1a
+generated: "2019-11-05T21:39:54.91783361Z"
