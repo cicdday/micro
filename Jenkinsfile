@@ -62,7 +62,7 @@ pipeline {
       when { anyOf { branch 'master'; branch 'PR-*' } }
         environment {
           PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
-          PREVIEW_URL = "http://micro.bmw-cloudpocstation-${PREVIEW_NAMESPACE}.cloud-poc-station.com"
+          PREVIEW_URL = "http://micro.jx-cloudpocstation-${PREVIEW_NAMESPACE}.cloud-poc-station.com"
           RESOURCE_URL = "${PREVIEW_URL}/micro-sample/rs/monitoring/ping"
         }
         steps {
@@ -78,7 +78,7 @@ pipeline {
       when { anyOf { branch 'master'; branch 'PR-*' } }
               environment {
                 PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
-                PREVIEW_URL = "http://micro.bmw-cloudpocstation-${PREVIEW_NAMESPACE}.cloud-poc-station.com"
+                PREVIEW_URL = "http://micro.jx-cloudpocstation-${PREVIEW_NAMESPACE}.cloud-poc-station.com"
                 RESOURCE_URL = "${PREVIEW_URL}/micro-sample/rs/monitoring/ping"
               }
               steps {
