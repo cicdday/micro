@@ -1,8 +1,8 @@
 OS := $(shell uname)
 
 preview: 
-echo $(PREVIEW_VERSION)
-echo $(DOCKER_REGISTRY)
+	echo $(PREVIEW_VERSION)
+	echo $(DOCKER_REGISTRY)
 ifeq ($(OS),Darwin)
 	sed -i "" -e "s/version:.*/version: $(PREVIEW_VERSION)/" Chart.yaml
 	sed -i "" -e "s/version:.*/version: $(PREVIEW_VERSION)/" ../*/Chart.yaml
