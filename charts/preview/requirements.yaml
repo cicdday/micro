@@ -8,10 +8,6 @@ dependencies:
   name: exposecontroller
   repository: http://chartmuseum.jenkins-x.io
   version: 2.3.56
-- alias: database
-  name: postgresql
-  version: 1.0.0
-  repository: https://kubernetes-charts.storage.googleapis.com
 - alias: preview
   name: micro
   repository: file://../micro
