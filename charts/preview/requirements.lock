@@ -1,0 +1,15 @@
+dependencies:
+- name: exposecontroller
+  repository: http://chartmuseum.jenkins-x.io
+  version: 2.3.56
+- name: exposecontroller
+  repository: http://chartmuseum.jenkins-x.io
+  version: 2.3.56
+- name: postgresql
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 1.0.0
+- name: micro
+  repository: file://../micro
+  version: 0.0.0-SNAPSHOT-master-12
+digest: sha256:0056915a32a1d6239bc68cfcfc1a859d2c7bec8895dbe72501898d3dd7c1927e
+generated: "2019-11-05T21:11:30.564908689Z"
