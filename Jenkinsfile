@@ -22,14 +22,6 @@ pipeline {
           }
         }
       }
-      stage('CI: Analyse Code') {
-      when { anyOf { branch 'master'; branch 'PR-*' } }
-        steps {
-            container('maven') {
-                //sh "mvn sonar:sonar -Dsonar.host.url=http://sonar.bmw.cloud-poc-station.com"
-            }
-        }
-      }
       stage('CI: Push Snapshot') {
             when { anyOf { branch 'master'; branch 'PR-*' } }
                environment {
@@ -43,7 +35,7 @@ pipeline {
               }
             }
       stage('TEST: Create Preview Environment') {
-      when { anyOf { branch 'master'; branch 'PR-*' } }
+      when { anyOf { branch 'PR-*' } }
         environment {
           PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
           PREVIEW_VERSION = "0.0.0-SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
@@ -59,7 +51,7 @@ pipeline {
         }
       }
       stage('TEST: Smoke Tests') {
-      when { anyOf { branch 'master'; branch 'PR-*' } }
+      when { anyOf { branch 'PR-*' } }
         environment {
           PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
           PREVIEW_URL = "http://micro.jx-cloudpocstation-${PREVIEW_NAMESPACE}.cloud-poc-station.com"
@@ -75,7 +67,7 @@ pipeline {
         }
       }
       stage('TEST: Module and subsystem tests') {
-      when { anyOf { branch 'master'; branch 'PR-*' } }
+      when { anyOf { branch 'PR-*' } }
               environment {
                 PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
                 PREVIEW_URL = "http://micro.jx-cloudpocstation-${PREVIEW_NAMESPACE}.cloud-poc-station.com"
