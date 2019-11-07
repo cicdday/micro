@@ -8,6 +8,9 @@ pipeline {
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
+        stage('CI: Static Code Analysis') {
+            sh "echo call sonar here"
+        }
       stage('CI: Build') {
       when { anyOf { branch 'master'; branch 'PR-*' } }
         environment {
