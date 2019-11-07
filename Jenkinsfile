@@ -109,6 +109,16 @@ pipeline {
           }
         }
       }
+        
+      stage('JBOB build step') {
+        steps {
+          container('maven') {
+            // ensure we're not on a detached head
+            echo("Hello jbob - well done")
+          }
+        }
+      }        
+        
       stage('Promote to Environments') {
         when {
           branch 'master'
